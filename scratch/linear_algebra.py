@@ -1,5 +1,5 @@
 from typing import List
-Vetor = List[float]
+Vector = List[float]
 
 def add(v: Vector, w: Vector) -> Vector:
     assert len(v) == len(w)
@@ -15,17 +15,17 @@ def vector_sum(vectors: List[Vector]) -> Vector:
 
     #verfica se os vetores tem o mesmo tamanho
     num_elements = len(vectors[0])
-    assert all(len(v) == num_elements for v in vetores) #"different sizes"
+    assert all(len(v) == num_elements for v in vectors) #"different sizes"
 
-    return[sum(vector[i] for vetor in vetores)
+    return[sum(vector[i] for vector in vectors)
         for i in range(num_eleme)]
 
-def scalar_multiply(c: float, v: Vector) -> Vetor:
+def scalar_multiply(c: float, v: Vector) -> Vector:
     return [c * v_i for v_i in v]
     
 def vector_mean(vectors: List[Vector]) -> Vector:
     n = len(vectors)
-    return scalar_multiply(1/n, vetor_soma(vetores))
+    return scalar_multiply(1/n, vetor_sum(vetores))
 
 def dot(v: Vector, w: Vector) -> float:
     assert len(v) == len(w)
